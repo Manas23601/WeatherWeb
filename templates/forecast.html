@@ -1,0 +1,148 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+  <head>
+      <title >Login</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <link rel="stylesheet" href="static/test.css">
+  </head>
+  <style>
+      body
+    {
+       background-image:url("static/greate-scene-of-weather-wallpaper.jpg");
+       background-size:cover;
+       background-position:center;
+       text-align:center;
+
+    }
+
+.collapsible {
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 300px;
+  border: ridge;
+  text-align: center;
+
+
+  font-size: 15px;
+}
+.content {
+  padding: 0 18px;
+  overflow: hidden;
+  max-height: 0;
+  text-align:center;
+  width:300px;
+  margin:0 auto;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+.border
+{
+  border-top:1px solid;
+}
+  </style>
+<body>
+       <nav class="navbar navbar-dark bg-dark">
+       <a class="navbar-brand" href="/">
+       <img src="static/clouds.jpg" width="30" height="30" alt=""> WeatherWeb
+       </a>
+       <a class= "navbar-brand" href="/login">Log Out</a>
+       </nav>
+
+
+<div class="container">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <div class="notification"> </div>
+        <div class="weather-container">
+            <div class="weather-icon">
+                <img src="static/icons/{{icon_id}}.png" alt="">
+            </div>
+            <div class="temperature-value">
+                <p id = "1">{{temp}}°<span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p>{{description}} </p>
+            </div>
+            <div class="location">
+                <p>{{name}},{{country}}</p>
+            </div>
+        </div>
+    </div>
+
+<button type="button" class="collapsible">Temperature</button>
+    <div class="content">
+    <div class ="border" ><b>Temperature:</b><span id ="2">{{temp}}C</span></div>
+    <div class ="border" ><b>Temperature Minimum</b><span id = "3">{{temp_min}}C</span></div>
+    <div class= "border" ><b>Temperature Maximum:</b><span id ="4">{{temp_max}}C</span></div>
+    <div class ="border" ><b>Humidity:</b><span>{{humidity}}%</span></div>
+    </div>
+<button type="button" class="collapsible">Wind</button>
+     <div class="content">
+         <div>Speed:<span id ="5">{{speed}}m/s</span></div>
+         <div class ="border">Degree:{{deg}}°</div>
+         <div class="border">Pressure:{{pressure}}hPa</div>
+     </div>
+<button type="button" class="collapsible">GeoLocation</button>
+<div class = "content">
+    <div><b>Latitude:</b>{{latitude}}</div>
+    <div class ="border"><b>Longitude:</b>{{longitude}}</div>
+</div>
+
+<script type="text/javascript">
+var tempflip= 0;
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+function celsiusToFahrenheit(temperature){
+    return (temperature * 9/5) + 32;
+}
+function mToM(meter)
+{
+    return meter*2.23;
+}
+var x = document.getElementById("1");
+x.addEventListener("click",function(){
+    if (tempflip%2 === 0)
+    {
+        tempflip++;
+        let fahrenheit = celsiusToFahrenheit({{temp}});
+        fahrenheit = Math.floor(fahrenheit);
+        x.innerHTML =` ${fahrenheit}<span>°F</span>`;
+        document.getElementById("2").innerHTML = `${Math.floor(celsiusToFahrenheit({{temp}}))}°F`;
+        document.getElementById("3").innerHTML = `${Math.floor(celsiusToFahrenheit({{temp_min}}))}°F`;
+        document.getElementById("4").innerHTML = `${Math.floor(celsiusToFahrenheit({{temp_max}}))}°F`;
+        document.getElementById("5").innerHTML = `${Math.floor(mToM({{speed}}))}Miles/hour`;
+    }
+    else
+    {
+        x.innerHTML = ` {{temp}}<span>°C</span>`;
+        document.getElementById("2").innerHTML = `{{temp}}°C`;
+        document.getElementById("3").innerHTML = `{{temp_min}}°C`;
+        document.getElementById("4").innerHTML = `{{temp_max}}°C`;
+        document.getElementById("5").innerHTML = `{{speed}}m/s`;
+        tempflip++;
+    }
+});
+
+
+
+</script>
+</body>
+</html>

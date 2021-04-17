@@ -1,0 +1,52 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+  <head>
+      <title >Login</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  </head>
+  <style>
+     body
+    {
+       background-image:url("Weather-Background.jpg");
+       background-size:cover;
+       background-position:center;
+       text-align: center;
+    }
+    .container
+    {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+    }
+    form
+    {
+        display:inline-block;
+        margin-top:300px;
+    }
+   </style>
+
+   <body>
+       <nav class="navbar navbar-dark bg-dark">
+       <a class="navbar-brand" href="index.html">
+       <img src="clouds.jpg" width="30" height="30" alt=""> WeatherWeb
+       </a>
+       <a class= "navbar-brand" href="login.html">Log Out</a>
+       </nav>
+       <form action="/" method='POST'>
+               <div class="form-group">
+               <input class="form-control" id="city" placeholder="City" type="text" style="width:400px" >
+               </div>
+               <button class="btn btn-primary" type="submit">Check Forecast</button>
+       </form>
+       <script text="text/javascript">
+       alert("hello");
+      if( document.getElementById("city").value==="Your location")
+      alert("hello");
+       </script>
+</body>
+</html>

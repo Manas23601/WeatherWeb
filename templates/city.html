@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   register
+{% endblock %}
+
+{% block main %}
+    <form action = "/city" method='POST'>
+         <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="city" placeholder="City" type="text">
+         </div>
+        <button class="btn btn-primary" type="submit">Check</button>
+    </form>
+{% endblock %}

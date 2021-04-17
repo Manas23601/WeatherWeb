@@ -1,0 +1,280 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+  <head>
+      <title >Login</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Mixed Weather Widget Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //custom-theme -->
+<link href="static/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="static/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+
+  </head>
+  <style>
+     body
+    {
+       background-image:url("static/Weather-Background.jpg");
+       background-size:cover;
+       background-position:center;
+       text-align: center;
+    }
+    .container
+    {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+    }
+    form
+    {
+        display:inline-block;
+        margin-top:140px;
+    }
+    .navbar a:hover
+    {
+        background-color:red;
+    }
+
+ </style>
+   <body>
+       <nav class="navbar navbar-dark bg-dark">
+       <a class="navbar-brand" href="/">
+       <img src="static/clouds.jpg" width="30" height="30" alt=""> WeatherWeb
+       </a>
+       <a class="navbar-brand ml-auto "href="/change_password">Change Password</a>
+       <a class= "navbar-brand" href="/login">Log Out</a>
+       </nav>
+
+      <form action="/" method='POST'>
+               <div class="form-group">
+               <input class="form-control" name="city" placeholder="City" type="text" style="width:400px">
+               </div>
+               <button id ="button" class="btn btn-primary" type="submit">Check Forecast</button>
+
+       </form>
+
+
+
+
+
+       <div class="main">
+		<div class="w3_agile_main_grids">
+			<div class="agile_main_grid">
+				<div class="agileits_w3layouts_main_grid_left">
+					<div class="wthree_main_grid agileinfo_main_grid">
+						<div class="w3ls_main_grid">
+							<div class="agileits_main_grid_left">
+								<div class="agileits_main_grid_leftl">
+									<h3>24<span>°</span></h3>
+								</div>
+								<div class="agileits_main_grid_leftr">
+									<h4 id ="climate">Sunny</h4>
+									<p id ="place">London</p>
+								</div>
+								<div class="clear"> </div>
+							</div>
+							<div class="agileits_main_grid_right">
+								<p id ="time">at 09:00 PM</p>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div class="w3l_main_grid_list">
+							<ul id="owl-demo" class="owl-carousel owl-theme">
+								<li><h4>Fri</h4>
+									<div class="w3layouts_icon">
+										<img src="static/images/1.png" alt=" " class="w3_img_responsive" / id ="fri0">
+									</div>
+									<h5 id ="fri1">27° <span>15°</span></h5>
+								</li>
+								<li><h4>Sat</h4>
+									<div class="w3layouts_icon">
+										<img src="static/images/2.png" alt=" " class="w3_img_responsive" / id ="sat0">
+									</div>
+									<h5 id ="sat1">12° <span>20°</span></h5>
+								</li>
+								<li><h4>Sun</h4>
+									<div class="w3layouts_icon">
+										<img src="static/images/3.png" alt=" " class="w3_img_responsive" / id ="sun0">
+									</div>
+									<h5 id ="sun1">15° <span>10°</span></h5>
+								</li>
+								<li><h4>Mon</h4>
+									<div class="w3layouts_icon">
+										<img src="static/images/4.png" alt=" " class="w3_img_responsive" / id = "mon0">
+									</div>
+									<h5 id = "mon1">20° <span>18°</span></h5>
+								</li>
+								<li><h4>Tue</h4>
+									<div class="w3layouts_icon">
+										<img src="static/images/5.png" alt=" " class="w3_img_responsive" / id="tue0">
+									</div>
+									<h5 id ="tue1">15° <span>15°</span></h5>
+								</li>
+								<li><h4>Wed</h4>
+									<div class="w3layouts_icon">
+										<img src="static/images/6.png" alt=" " class="w3_img_responsive" / id="wed0">
+									</div>
+									<h5 id ="wed1">10° <span>12°</span></h5>
+								</li>
+								<li><h4>Thu</h4>
+									<div class="w3layouts_icon">
+										<img src="static/images/7.png" alt=" " class="w3_img_responsive" / id="thu0">
+									</div>
+									<h5 id="thu1">12° <span>10°</span></h5>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="static/jquery-2.2.3.min.js"></script>
+	<script src="static/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#owl-demo,#owl-demo1,#owl-demo3,#owl-demo4").owlCarousel({
+			  autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+			  items : 4,
+			  itemsDesktop : [768,3],
+			  itemsDesktopSmall : [414,2]
+
+			});
+
+		});
+
+alert("{{message}}");
+
+function checkTime(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  // add a zero in front of numbers<10
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+  t = setTimeout(function() {
+    startTime();
+  }, 500);
+}
+startTime();
+
+	    var today = new Date();
+        var date = document.getElementById("place");
+        var news = today.getDate()+':'+today.getMonth()+':'+today.getFullYear();
+        date.innerHTML = today.getDate()+':'+today.getMonth()+':'+today.getFullYear() + ',' + " London";
+var worldflip = 0;
+var ele  ;
+var climate = document.getElementById("climate");
+var change = document.getElementsByClassName("main");
+change[0].addEventListener("click",function(){
+	worldflip++;
+	if(worldflip%4 == 0)
+	{
+        date.innerHTML = news + ',' + " London";
+		ele = document.getElementsByClassName("agileinfo_main_grid");
+		ele[0].style.backgroundImage = "url(static/images/1.jpg) ";
+		climate.innerHTML = "Sunny";
+		document.getElementById("fri0").src = "static/images/1.png";
+		document.getElementById("fri1").innerHTML = "27 "+`<span> 15</span>`;
+		document.getElementById("sat0").src = "static/images/2.png";
+		document.getElementById("sat1").innerHTML = "12 "+`<span> 20</span>`;
+		document.getElementById("sun0").src = "static/images/3.png";
+		document.getElementById("sun1").innerHTML = "15 "+`<span> 10</span>`;
+		document.getElementById("mon0").src = "static/images/4.png";
+		document.getElementById("mon1").innerHTML = "20 "+`<span> 18</span>`;
+		document.getElementById("tue0").src = "static/images/5.png";
+		document.getElementById("tue1").innerHTML = "15 "+`<span> 15</span>`;
+		document.getElementById("wed0").src = "static/images/6.png";
+		document.getElementById("wed1").innerHTML = "10 "+`<span> 12</span>`;
+		document.getElementById("thu0").src = "static/images/7.png";
+		document.getElementById("thu1").innerHTML = "12 "+`<span> 10</span>`;
+	}
+	if (worldflip%4 == 1)
+	{
+		date.innerHTML = news + ',' + " Japan";
+		ele = document.getElementsByClassName("agileinfo_main_grid");
+		ele[0].style.backgroundImage = "url(static/images/2.jpg) ";
+		climate.innerHTML = "Cloudy";
+		document.getElementById("fri0").src = "static/images/8.png";
+		document.getElementById("fri1").innerHTML = "25 "+`<span> 20</span>`;
+		document.getElementById("sat0").src = "static/images/9.png";
+		document.getElementById("sat1").innerHTML = "13 "+`<span> 17</span>`;
+		document.getElementById("sun0").src = "static/images/10.png";
+		document.getElementById("sun1").innerHTML = "21 "+`<span> 11</span>`;
+		document.getElementById("mon0").src = "static/images/11.png";
+		document.getElementById("mon1").innerHTML = "21 "+`<span> 18</span>`;
+		document.getElementById("tue0").src = "static/images/1.png";
+		document.getElementById("tue1").innerHTML = "16 "+`<span> 16</span>`;
+		document.getElementById("wed0").src = "static/images/2.png";
+		document.getElementById("wed1").innerHTML = "9 "+`<span> 10</span>`;
+		document.getElementById("thu0").src = "static/images/7.png";
+		document.getElementById("thu1").innerHTML = "11 "+`<span> 12</span>`;
+	}
+	if (worldflip%4 == 2)
+	{
+		date.innerHTML = news + ',' + " Tokyo";
+		ele = document.getElementsByClassName("agileinfo_main_grid");
+		ele[0].style.backgroundImage = "url(static/images/4.jpg) ";
+		climate.innerHTML = "Rainy";
+		document.getElementById("fri0").src = "static/images/8.png";
+		document.getElementById("fri1").innerHTML = "10 "+`<span> 15</span>`;
+		document.getElementById("sat0").src = "static/images/9.png";
+		document.getElementById("sat1").innerHTML = "14 "+`<span> 22</span>`;
+		document.getElementById("sun0").src = "static/images/10.png";
+		document.getElementById("sun1").innerHTML = "9 "+`<span> 11</span>`;
+		document.getElementById("mon0").src = "static/images/11.png";
+		document.getElementById("mon1").innerHTML = "20 "+`<span> 19</span>`;
+		document.getElementById("tue0").src = "static/images/1.png";
+		document.getElementById("tue1").innerHTML = "11 "+`<span> 10</span>`;
+		document.getElementById("wed0").src = "static/images/2.png";
+		document.getElementById("wed1").innerHTML = "19 "+`<span> 14</span>`;
+		document.getElementById("thu0").src = "static/images/7.png";
+		document.getElementById("thu1").innerHTML = "11 "+`<span> 9</span>`;
+	}
+	if (worldflip%4 == 3)
+	{
+		date.innerHTML = news + ',' + " Canada";
+		var ele = document.getElementsByClassName("agileinfo_main_grid");
+		ele[0].style.backgroundImage = "url(static/images/3.jpg) ";
+		climate.innerHTML = "Thunders";
+		document.getElementById("fri0").src = "static/images/1.png";
+		document.getElementById("fri1").innerHTML = "10 "+`<span> 8</span>`;
+		document.getElementById("sat0").src = "static/images/2.png";
+		document.getElementById("sat1").innerHTML = "32 "+`<span> 20</span>`;
+		document.getElementById("sun0").src = "static/images/3.png";
+		document.getElementById("sun1").innerHTML = "15 "+`<span> 12</span>`;
+		document.getElementById("mon0").src = "static/images/4.png";
+		document.getElementById("mon1").innerHTML = "23 "+`<span> 18</span>`;
+		document.getElementById("tue0").src = "static/images/5.png";
+		document.getElementById("tue1").innerHTML = "13 "+`<span> 15</span>`;
+		document.getElementById("wed0").src = "static/images/6.png";
+		document.getElementById("wed1").innerHTML = "11 "+`<span> 12</span>`;
+		document.getElementById("thu0").src = "static/images/7.png";
+		document.getElementById("thu1").innerHTML = "17 "+`<span> 13</span>`;
+	}
+
+});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html5>
+
+<html lang="en">
+
+  <head>
+      <title >Login</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <style>
+     body
+    {
+       background-image:url("static/blur.jpg");
+       background-size:cover;
+       background-position:center;
+    }
+    .box
+    {
+        position:absolute;
+        top: 30%;
+        left: 37%;
+        width : 400px;
+        padding:40px;
+        background:rgba(0,0,0,.8);
+        box-shadow: 0 15px 25px rgba(0,0,0,.5);
+        border-radius:10px;
+    }
+    .box h2
+    {
+        margin:0 0 30px;
+        padding:0;
+        color:#fff;
+        text-align:center;
+    }
+    .box .inputbox
+    {
+        position:relative;
+    }
+    .box .inputbox input
+    {
+        width:100%;
+        padding:10px 0;
+        color:#fff;
+        margin-bottom:30px;
+        border:none;
+        background:transparent;
+    }
+   </style>
+
+   <body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    <img src="static/clouds.jpg" width="30" height="30" alt=""> WeatherWeb
+  </a>
+  <a class="navbar-brand" href="/register">Register</a>
+</nav>
+
+
+    <div class="box">
+        <h2>Login</h2>
+    <form action = "/login" method='POST'>
+         <div class="inputbox">
+            <input autocomplete="off"  name="username" placeholder="Username" type="text">
+         </div>
+          <div class="inputbox">
+            <input name="password" placeholder="Password" type="password">
+          </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+    </div>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+
+   </body>
+</html>
