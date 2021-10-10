@@ -1,15 +1,10 @@
-import os
 import math
 import sqlite3 as sql
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
-from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
-from datetime import datetime
-
 from .helpers import  login_required, lookup, apology
-import requests
 # Configure application
 app = Flask(__name__)
 
