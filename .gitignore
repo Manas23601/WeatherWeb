@@ -1,4 +1,4 @@
-.~c9_invoke_LYkj7T.py
+./.~c9_invoke_LYkj7T.py
 env
-test.py
-data.db
+./test.py
+./data.db
