@@ -190,3 +190,5 @@ def change_password():
             db.execute("UPDATE users SET hash=:hash WHERE id=:user_id",hash=generate_password_hash(new_password),user_id=session["user_id"])
             return redirect("/")
 
+if __name__ == "__main__":
+      app.run()
