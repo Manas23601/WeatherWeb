@@ -1,6 +1,6 @@
 import os
 import math
-from cs50 import SQL
+import sqlite3 as sql
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
@@ -32,9 +32,10 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 
-db = SQL("sqlite:///data.db")
-
-
+db = sql.connect("data.db")
+db.execute('CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY ,'
+            +'hash TEXT)')
+db.close()
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -72,7 +73,11 @@ def register():
         password_hash = generate_password_hash(password)
 
         #store hash_value of the password
-        db.execute("INSERT INTO users (id,hash) VALUES (:id, :hash)",id=username,hash=password_hash)
+        db = sql.connect("data.db")
+        cur = db.cursor()
+        cur.execute("INSERT INTO users (username,hash) VALUES (?, ?)",(username,password_hash))
+        db.commit()
+        db.close()
         return redirect("/")
 
 
@@ -82,7 +87,7 @@ def login():
 
     # Forget any user_id
     session.clear()
-
+ 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
 
@@ -93,17 +98,21 @@ def login():
         # Ensure password was submitted
         elif not request.form.get("password"):
             return apology("must provide password", 403)
-
+  
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE id = :username",
-                          username=request.form.get("username"))
+        db = sql.connect("data.db")
+        cur = db.cursor()
+        cur.execute("SELECT * FROM users WHERE username ='{}'".format(request.form.get("username")))
+        rows = cur.fetchall()
+        db.commit()
+        db.close()
 
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(rows[0][1], request.form.get("password")):
             return apology("invalid username and/or password", 403)
 
-        # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        # Remember which user has loggged in
+        session["user_id"] = rows[0][0]
 
         # Redirect user to home page
         return redirect("/")
