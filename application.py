@@ -8,7 +8,7 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
 
-from helpers import  login_required, lookup, apology
+from .helpers import  login_required, lookup, apology
 import requests
 # Configure application
 app = Flask(__name__)
